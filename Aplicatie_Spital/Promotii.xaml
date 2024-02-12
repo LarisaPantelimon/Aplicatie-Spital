@@ -1,0 +1,258 @@
+﻿<Window x:Class="LAGE_APP.Promotii"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAGE_APP"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="Promotii" Height="750" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Imagini/logo.png"
+        WindowStyle="None">
+
+    <Border CornerRadius="20" Margin="0,1,0,-1">
+
+        <Border.Background>
+            <ImageBrush ImageSource="/Imagini/Promotii.png">
+            </ImageBrush>
+        </Border.Background>
+        <Grid>
+
+            <Grid Margin="470,24,35,24" Cursor="">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+
+
+
+                <Button x:Name="btnMinimizare1" Content="-" Foreground="Black" FontSize="16" FontFamily="Montserrat" Cursor="Hand" Margin="562,-21,65,661"   RenderTransformOrigin="0.263,0.625" Grid.Row="1" Click="btnMinimizare1_Click" >
+
+                    <Button.Resources>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Resources>
+
+
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#FF7EC6DA" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="CadetBlue" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Border Width="25" Height="25" CornerRadius="9" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                                <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/minimizare.gif" Width="25" Height="25" Visibility="Collapsed" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="gifImage" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+
+                </Button>
+
+                <Button x:Name="btnClose1"
+       
+BorderThickness="0"
+Content="X"
+Foreground="White"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Click="btnClose_Click" Margin="623,-25,0,0" RenderTransformOrigin="1.679,0.147" Grid.Row="1" Height="68" VerticalAlignment="Top" HorizontalAlignment="Left" Width="28"
+>
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.036"/>
+                            <TranslateTransform X="-0.014" Y="-0.02"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Red"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DarkRed"/>
+
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="25" Height="25"
+CornerRadius="9"
+Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+
+                </Button>
+
+
+            </Grid>
+
+            <Button x:Name="Pachet_Cardio" HorizontalAlignment="Left" Margin="50,79,0,0" VerticalAlignment="Top" Height="175" Width="315" Background="Transparent" Click="Cardio_Click" FontSize="20" BorderBrush="{x:Null}" Cursor="Hand" Focusable="False" IsManipulationEnabled="True" IsTabStop="False" MouseEnter="Pachet_Cardio_MouseEnter" MouseLeave="Pachet_Cardio_MouseLeave">
+                <Grid Height="130" Width="250">
+                    <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/cardiogif.gif" Width="60" Height="60" Visibility="Collapsed" Margin="150,-90,50,0" />
+
+                    <TextBlock x:Name="CardioTxt" TextWrapping="Wrap" Text="CARDIOLOGIE" Foreground="#FF0FE6D7" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" RenderTransformOrigin="0.5,0.5" Margin="-1,2,119,105">
+                    </TextBlock>
+                    <TextBlock x:Name="Analize_Cardio" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" FontSize="20" FontStyle="Italic" Foreground="#FF16534F" FontWeight="SemiBold" Text="Pachet consult + EKG + Ecocardiografie " Margin="0,48,-5,0"/>
+                    <TextBlock x:Name="Pret_Cardio" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Background="Transparent" Foreground="#FF020F0E" FontSize="25" FontStyle="Italic" FontWeight="ExtraBold" Text="500lei " Margin="140,97,-5,0"/>
+                </Grid>
+            </Button>
+
+
+
+
+            <Button x:Name="Pachet_Ortopedie" HorizontalAlignment="Left" Margin="440,79,0,0" VerticalAlignment="Top" Height="175" Width="318" Background="Transparent" Click="Ortopedie_Click" FontSize="20" BorderBrush="{x:Null}" Cursor="Hand" MouseEnter="Pachet_Ortopedie_MouseEnter" MouseLeave="Pachet_Ortopedie_MouseLeave">
+                <Grid Height="130" Width="250">
+                    <Image x:Name="giforto" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/ortogif.gif" Width="60" Height="60" Visibility="Collapsed" Margin="150,-90,50,0" />
+
+                    <TextBlock x:Name="Ortopedie" TextWrapping="Wrap" Text="ORTOPEDIE" Foreground="#FF0FE6D7" FontSize="20" FontStyle="Italic" FontWeight="SemiBold"  Margin="-1,2,119,105"/>
+                    <TextBlock x:Name="Analize_Ortopedie" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Foreground="#FF16534F" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Text="Pachet consult + Infiltratie PRP (unilateral)" Margin="0,48,-5,0"/>
+                    <TextBlock x:Name="Pret_Orto" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Background="Transparent" Foreground="#FF020F0E" FontSize="25" FontStyle="Italic" FontWeight="ExtraBold" Text="400lei " Margin="154,97,-19,0"/>
+                </Grid>
+            </Button>
+
+            <Button x:Name="Pachet_Gineco" HorizontalAlignment="Left" Margin="836,79,0,0" VerticalAlignment="Top" Height="175" Width="316" Background="Transparent" Click="Gineco_click" FontSize="20" BorderBrush="{x:Null}" Cursor="Hand" MouseEnter="Pachet_Gineco_MouseEnter" MouseLeave="Pachet_Gineco_MouseLeave">
+                <Grid Height="130" Width="250">
+                    <Image x:Name="gifGineco" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/ginecogif.gif" Width="60" Height="60" Visibility="Collapsed" Margin="150,-90,50,0" />
+
+                    <TextBlock x:Name="Ginecologie" TextWrapping="Wrap" Text="GINECOLOGIE" Foreground="#FF0FE6D7" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Margin="-1,2,119,105"/>
+                    <TextBlock x:Name="Analize_Gineco" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Foreground="#FF16534F" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Text="Consult pentru femei gravide + Ecografie sarcină " Margin="0,48,-5,0"/>
+                    <TextBlock x:Name="Pret_Gineco" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Background="Transparent" Foreground="#FF020F0E" FontSize="25" FontStyle="Italic" FontWeight="ExtraBold" Text="450lei " Margin="186,97,-51,0"/>
+                </Grid>
+            </Button>
+
+            <Button x:Name="Pachet_Neuro" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center" Height="172" Width="315" Background="Transparent" Click="Neuro_Click" FontSize="20" BorderBrush="{x:Null}" Cursor="Hand" MouseEnter="Pachet_Neuro_MouseEnter" MouseLeave="Pachet_Neuro_MouseLeave">
+                <Grid Height="130" Width="250">
+                    <Image x:Name="gifNeuro" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/neurogif.gif" Width="60" Height="60" Visibility="Collapsed" Margin="150,-90,50,0" />
+
+                    <TextBlock x:Name="Neurologie" TextWrapping="Wrap" Text="NEUROLOGIE" Foreground="#FF0FE6D7" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Margin="-1,2,119,105"/>
+                    <TextBlock x:Name="Analize_Neuro" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Foreground="#FF16534F" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Text="Pachet consult + Intocmire referat medical " Margin="0,48,-5,0"/>
+                    <TextBlock x:Name="Pret_Neuro" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Background="Transparent" Foreground="#FF020F0E" FontSize="25" FontStyle="Italic" FontWeight="ExtraBold" Text="420lei " Margin="140,97,-5,0"/>
+                </Grid>
+            </Button>
+
+            <Button x:Name="Pachet_Pediatrie" HorizontalAlignment="Left" Margin="440,0,0,0" VerticalAlignment="Center" Height="175" Width="317" Background="Transparent" Click="Pediatrie_Click" FontSize="20" BorderBrush="{x:Null}" Cursor="Hand" MouseEnter="Pachet_Pediatrie_MouseEnter" MouseLeave="Pachet_Pediatrie_MouseLeave">
+                <Grid Height="130" Width="250">
+                    <Image x:Name="gifPediatrie" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/pediatriegif.gif" Width="60" Height="60" Visibility="Collapsed" Margin="150,-90,50,0" />
+
+                    <TextBlock x:Name="Pediatrie" TextWrapping="Wrap" Text="PEDIATRIE" Foreground="#FF0FE6D7" FontSize="20" FontStyle="Italic" FontWeight="SemiBold"  Margin="-1,2,119,105"/>
+                    <TextBlock x:Name="Analize_Pediatrie" TextWrapping="Wrap" VerticalAlignment="Top" Width="275" Foreground="#FF16534F" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Text="Pachet consult + Ecografie + Analize " Margin="0,50,-25,0"/>
+                    <TextBlock x:Name="Pret_Pediatrie" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Background="Transparent" Foreground="#FF020F0E" FontSize="25" FontStyle="Italic" FontWeight="ExtraBold" Text="359lei " Margin="156,97,-21,0"/>
+                </Grid>
+            </Button>
+
+            <Button x:Name="Pachet_Chirurgie" HorizontalAlignment="Left" Margin="836,0,0,0" VerticalAlignment="Center" Height="172" Width="316" Background="Transparent" Click="Chirurgie_Click" FontSize="20" BorderBrush="{x:Null}" Cursor="Hand" MouseEnter="Pachet_Chirurgie_MouseEnter" MouseLeave="Pachet_Chirurgie_MouseLeave">
+                <Grid Height="130" Width="250">
+                    <Image x:Name="gifChirurgie" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/chirurgiegif.gif" Width="60" Height="60" Visibility="Collapsed" Margin="150,-90,50,0" />
+
+                    <TextBlock x:Name="ChirurgieGenerala" TextWrapping="Wrap" Text="CHIRURGIE GENERALA" Foreground="#FF0FE6D7" FontSize="14" FontStyle="Italic" FontWeight="SemiBold" Margin="-1,2,89,101"/>
+                    <TextBlock x:Name="Analize_Chirurgie" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Foreground="#FF16534F" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Text="Pachet cauterizare formatiuni tumorale tegumentare" Margin="0,48,-5,0"/>
+                    <TextBlock x:Name="Pret_Chirurgie" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Background="Transparent" Foreground="#FF020F0E" FontSize="25" FontStyle="Italic" FontWeight="ExtraBold" Text="310lei " Margin="182,99,-47,0"/>
+                </Grid>
+            </Button>
+
+            <Button x:Name="Pachet_Dermato" HorizontalAlignment="Left" Margin="46,494,0,0" VerticalAlignment="Top" Height="175" Width="318" Background="Transparent" Click="Dermato_Click" FontSize="20" BorderBrush="{x:Null}" Cursor="Hand" MouseEnter="Pachet_Dermato_MouseEnter" MouseLeave="Pachet_Dermato_MouseLeave">
+                <Grid Height="130" Width="250">
+                    <Image x:Name="gifDermato" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/dermatogif.gif" Width="60" Height="60" Visibility="Collapsed" Margin="150,-90,50,0" />
+
+                    <TextBlock x:Name="Dermatologie" TextWrapping="Wrap" Text="DERMATOLOGIE" Foreground="#FF0FE6D7" FontSize="18" FontStyle="Italic" FontWeight="SemiBold" Margin="-1,2,100,107"/>
+                    <TextBlock x:Name="Analize_Dermato" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Foreground="#FF16534F" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Text="Pachet consult + Examen lampa WOOD" Margin="0,48,-5,0"/>
+                    <TextBlock x:Name="Pret_Dermato" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Background="Transparent" Foreground="#FF020F0E" FontSize="25" FontStyle="Italic" FontWeight="ExtraBold" Text="180lei " Margin="148,89,-13,0"/>
+                </Grid>
+            </Button>
+
+            <Button x:Name="Pachet_Gastro" HorizontalAlignment="Left" Margin="440,494,0,0" VerticalAlignment="Top" Height="175" Width="317" Background="Transparent" Click="Gastro_Click" FontSize="20" BorderBrush="{x:Null}" Cursor="Hand" MouseEnter="Pachet_Gastro_MouseEnter" MouseLeave="Pachet_Gastro_MouseLeave">
+                <Grid Height="130" Width="250">
+                    <Image x:Name="gifGastro" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/gastrogif.gif" Width="60" Height="60" Visibility="Collapsed" Margin="150,-90,50,0" />
+
+                    <TextBlock x:Name="Gastroenterologie" TextWrapping="Wrap" Text="GASTROENTEROLOGIE" Foreground="#FF0FE6D7" FontSize="14" FontStyle="Italic" FontWeight="SemiBold" Margin="-1,2,92,101"/>
+                    <TextBlock x:Name="Analize_Gastro" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Foreground="#FF16534F" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Text="Pachet consult gastro + Ecografie abdominala" Margin="0,48,-5,0"/>
+                    <TextBlock x:Name="Pret_Gastro" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Background="Transparent" Foreground="#FF020F0E" FontSize="25" FontStyle="Italic" FontWeight="ExtraBold" Text="500lei " Margin="152,101,-18,0"/>
+                </Grid>
+            </Button>
+
+            <Button x:Name="Pachet_Medicina_Interna" HorizontalAlignment="Left" Margin="835,494,0,0" VerticalAlignment="Top" Height="175" Width="315" Background="Transparent" Click="Medicina_Interna_Click" FontSize="20" BorderBrush="{x:Null}" Cursor="Hand" MouseEnter="Medicina_Interna_MouseEnter" MouseLeave="Medicina_Interna_MouseLeave">
+                <Grid Height="130" Width="250">
+                    <Image x:Name="gifORL" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/orlgif.gif" Width="60" Height="60" Visibility="Collapsed" Margin="150,-90,50,0" />
+
+                    <TextBlock x:Name="Medicina_interna" TextWrapping="Wrap" Foreground="#FF0FE6D7" FontSize="15" FontStyle="Italic" FontWeight="SemiBold" Margin="6,6,31,85"><Run Text="MEDICINA INTERNA"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="Analize_Medicina_Interna" TextWrapping="Wrap" VerticalAlignment="Top" Width="257" Foreground="#FF16534F" FontSize="20" FontStyle="Italic" FontWeight="SemiBold" Text="Pachet consult complet" Margin="0,58,-7,0"/>
+                    <TextBlock x:Name="Pret_Medicina_Interna" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Background="Transparent" Foreground="#FF020F0E" FontSize="25" FontStyle="Italic" FontWeight="ExtraBold" Text="420lei " Margin="184,101,-50,0"/>
+                </Grid>
+            </Button>
+            <Button x:Name="Inapoibtn"
+        
+                BorderThickness="0"
+                Content="Inapoi"
+                Foreground="DarkBlue"
+                FontSize="16"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Margin="490,630,490,-19" Click="Inapoibtn_Click">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="CornflowerBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Height="30"
+                            CornerRadius="15"
+                            Background="{TemplateBinding Background}" Margin="31,58,64,51">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+
+
+        </Grid>
+    </Border>
+</Window>
+

@@ -1,0 +1,415 @@
+﻿<Window x:Class="LAGE_APP.PachetNeurologie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAGE_APP"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="PachetNeurologie" 
+        Height="450" 
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        Background="#FFB9C0DF"
+        AllowsTransparency="True"
+        Icon="/Imagini/logo.png"
+        WindowStyle="None">
+
+    <Grid Margin="0,30,0,10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="240"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnMinimizare1" Content="-" Foreground="Black" FontSize="16" FontFamily="Montserrat" Cursor="Hand" Margin="701,-36,43,230"   RenderTransformOrigin="0.263,0.625" Click="btnMinimizare1_Click" >
+
+            <Button.Resources>
+                <Style TargetType="{x:Type ContentPresenter}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Resources>
+
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF7EC6DA" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="CadetBlue" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Width="25" Height="25" CornerRadius="9" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/minimizare.gif" Width="25" Height="25" Visibility="Collapsed" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="gifImage" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+
+
+        </Button>
+
+        <Button x:Name="btnClose1"
+       
+BorderThickness="0"
+Content="X"
+Foreground="White"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Click="btnClose_Click" Margin="750,-47,0,0" RenderTransformOrigin="1.679,0.147" Height="68" VerticalAlignment="Top" HorizontalAlignment="Left" Width="28"
+>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.036"/>
+                    <TranslateTransform X="-0.014" Y="-0.02"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Red"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkRed"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="25" Height="25"
+CornerRadius="9"
+Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+
+        </Button>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="840" Height="240" Margin="0,6,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" VerticalAlignment="Top" Height="120" Grid.ColumnSpan="2" Margin="10,0,10,0">
+                <Button x:Name="btnQuestion1" 
+                        Content="Servicii și prețuri neurologie"
+                        Click="btnQuestion_Click" 
+                        Width="380" 
+                        Height="30" 
+                        Margin="0,0,0,10"
+                        Background="#FF5189AE" 
+                        BorderBrush="#FF183545" 
+                        Cursor="Hand"
+                        FontFamily="Book Antiqua" 
+                        FontSize="15" 
+                        FontStretch="Medium" 
+                        Foreground="#FF060D23"
+                        HorizontalAlignment="Center" 
+                        HorizontalContentAlignment="Center"
+                        Opacity="0.8" 
+                        OpacityMask="#FF06011A">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Height="30" CornerRadius="10" Background="{TemplateBinding Background}" Margin="35,0,0,0">
+                                <ContentPresenter x:Name="pachet1" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="pachet1_MouseEnter" MouseLeave="pachet1_MouseLeave_1"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+                <Button x:Name="btnQuestion2" 
+                        Content="Pachet neurologie" 
+                        Click="btnQuestion_Click" 
+                        Width="380" 
+                        Height="30" 
+                        Margin="0,0,0,10"
+                        Background="#FF5189AE" 
+                        BorderBrush="#FF183545" 
+                        Cursor="Hand"
+                        FontFamily="Book Antiqua" 
+                        FontSize="15" 
+                        FontStretch="Medium" 
+                        Foreground="#FF060D23"
+                        HorizontalAlignment="Center" 
+                        HorizontalContentAlignment="Center"
+                        Opacity="0.8" 
+                        OpacityMask="#FF06011A">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Height="30" CornerRadius="10" Background="{TemplateBinding Background}" Margin="35,0,0,0">
+                                <ContentPresenter x:Name="pachet2" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="pachet2_MouseEnter" MouseLeave="pachet2_MouseLeave"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="btnQuestion3" 
+                        Content="Afecțiuni " 
+                        Click="btnQuestion_Click" 
+                        Width="380" 
+                        Height="30" 
+                        Margin="0,0,0,10"
+                        Background="#FF5189AE" 
+                        BorderBrush="#FF183545" 
+                        Cursor="Hand"
+                        FontFamily="Book Antiqua" 
+                        FontSize="15" 
+                        FontStretch="Medium" 
+                        Foreground="#FF060D23"
+                        HorizontalAlignment="Center" 
+                        HorizontalContentAlignment="Center"
+                        Opacity="0.8" 
+                        OpacityMask="#FF06011A">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Height="30" CornerRadius="10" Background="{TemplateBinding Background}" Margin="35,0,0,0">
+                                <ContentPresenter x:Name="pachet3" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="pachet3_MouseEnter" MouseLeave="pachet3_MouseLeave"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" VerticalAlignment="Top" Height="200">
+                <Button x:Name="btnQuestion4" 
+                        Content="Pacientii se adreseaza cel mai des medicului pentru" 
+                        Click="btnQuestion_Click" 
+                        Width="390" 
+                        Height="30" 
+                        Margin="0,0,0,10"            
+                        Background="#FF5189AE" 
+                        BorderBrush="#FF183545" 
+                        Cursor="Hand"
+                        FontFamily="Book Antiqua" 
+                        FontSize="15" 
+                        FontStretch="Medium" 
+                        Foreground="#FF060D23"
+                        HorizontalAlignment="Center" 
+                        HorizontalContentAlignment="Center"
+                        Opacity="0.8" 
+                        OpacityMask="#FF06011A">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Height="30" CornerRadius="10" Background="{TemplateBinding Background}" Margin="35,0,0,0">
+                                <ContentPresenter x:Name="pachet4" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="pachet4_MouseEnter" MouseLeave="pachet4_MouseLeave"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="btnQuestion5" 
+                    Content="Diagnosticare neurologie" 
+                    Click="btnQuestion_Click" 
+                    Width="390" 
+                    Height="30" 
+                    Margin="0,0,0,10"
+                    Background="#FF5189AE" 
+                    BorderBrush="#FF183545" 
+                    Cursor="Hand"
+                    FontFamily="Book Antiqua" 
+                    FontSize="15" 
+                    FontStretch="Medium" 
+                    Foreground="#FF060D23"
+                    HorizontalAlignment="Center" 
+                    HorizontalContentAlignment="Center"
+                    Opacity="0.8" 
+                    OpacityMask="#FF06011A">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Height="30" CornerRadius="10" Background="{TemplateBinding Background}" Margin="35,0,0,0">
+                                <ContentPresenter x:Name="pachet5" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="pachet5_MouseEnter" MouseLeave="pachet5_MouseLeave"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="btnQuestion6" 
+                        Content="Prevenția bolilor neurologice și factori de risc" 
+                        Click="btnQuestion_Click" 
+                        Width="390" 
+                        Height="30"
+                        Background="#FF5189AE" 
+                        BorderBrush="#FF183545" 
+                        Cursor="Hand"
+                        FontFamily="Book Antiqua" 
+                        FontSize="15" 
+                        FontStretch="Medium" 
+                        Foreground="#FF060D23"
+                        HorizontalAlignment="Center" 
+                        HorizontalContentAlignment="Center"
+                        Opacity="0.8" 
+                        OpacityMask="#FF06011A">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Height="30" CornerRadius="10" Background="{TemplateBinding Background}" Margin="35,0,0,0">
+                                <ContentPresenter x:Name="pachet6" VerticalAlignment="Center" HorizontalAlignment="Center" MouseEnter="pachet6_MouseEnter" MouseLeave="pachet6_MouseLeave"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Name="stackPanelInfo" VerticalAlignment="Top" HorizontalAlignment="Left" Height="268" Width="722" Margin="35,142,0,0" Grid.RowSpan="2">
+            <TextBlock TextWrapping="Wrap" Height="265" FontFamily="Arial Narrow" FontSize="18" FontWeight="DemiBold"><Run FontFamily="Bahnschrift Condensed" Text="&#x9;Te-ai confruntat vreodată cu slăbiciune, amorțeală și/sau furnicături pe o anumită parte a corpului? Sau poate te confrunți cu dureri de cap recurente, amețeli sau stări de confuzie. Este important să știi că toate aceste simptome pot indica o afecțiune neurologică și nu ar trebui ignorate!"/><LineBreak/><Run FontFamily="Bradley Hand ITC"/><LineBreak/><Run FontFamily="Comic Sans MS" Text="Afecțiunile neurologice sunt destul de frecvente și pot varia "/><LineBreak/><Run FontFamily="Comic Sans MS" Text="de la tulburări grave care pun viața în pericol, până la "/><LineBreak/><Run FontFamily="Comic Sans MS" Text="afecțiuni mai puțin dăunătoare, dar care afectează "/><LineBreak/><Run FontFamily="Comic Sans MS" Text="viața de zi cu zi. Nu amână vizita la doctor!"/></TextBlock>
+        </StackPanel>
+
+        <Grid Margin="510,142,43,32" Grid.RowSpan="2">
+            <Image x:Name="gifImageCardio"
+                   gif:ImageBehavior.RepeatBehavior="Forever"
+                   gif:ImageBehavior.AnimatedSource="Imagini/robo.gif"
+                   Width="200"
+                   Height="200"
+                   Visibility="Collapsed"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"              
+                   Margin="10,10,0,0" />
+
+            <Image x:Name="gifMoney"
+                    gif:ImageBehavior.RepeatBehavior="Forever"
+                    gif:ImageBehavior.AnimatedSource="Imagini/moneyy.gif"
+                    Width="200"
+                    Height="200"
+                    Visibility="Collapsed"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"              
+                    Margin="10,10,0,0" />
+            <Image x:Name="gifAfectiuni"
+                    gif:ImageBehavior.RepeatBehavior="Forever"
+                    gif:ImageBehavior.AnimatedSource="Imagini/afectiunigif.gif"
+                    Width="200"
+                    Height="200"
+                    Visibility="Collapsed"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"              
+                    Margin="30,70,0,0" />
+            <Image x:Name="gifIntrebari"
+                    gif:ImageBehavior.RepeatBehavior="Forever"
+                    gif:ImageBehavior.AnimatedSource="Imagini/intrebarigif.gif"
+                    Width="200"
+                    Height="200"
+                    Visibility="Collapsed"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"              
+                    Margin="10,125,0,0" />
+            <Image x:Name="gifIntreaba"
+                    gif:ImageBehavior.RepeatBehavior="Forever"
+                    gif:ImageBehavior.AnimatedSource="Imagini/intreabagif.gif"
+                    Width="200"
+                    Height="200"
+                    Visibility="Collapsed"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"              
+                    Margin="60,100,0,0" />
+            <Image x:Name="gifSchimbare"
+                     gif:ImageBehavior.RepeatBehavior="Forever"
+                     gif:ImageBehavior.AnimatedSource="Imagini/schimbaregif.gif"
+                     Width="120"
+                     Height="120"
+                     Visibility="Collapsed"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"              
+                     Margin="60,70,0,0" />
+
+            <Image x:Name="roboimg" Source="/Imagini/roboo.png" Margin="54,51,-6,-15"/>
+
+        </Grid>
+        <Button x:Name="Inapoibtn"
+        
+            BorderThickness="0"
+            Content="Inapoi"
+            Foreground="DarkBlue"
+            FontSize="16"
+            FontFamily="Montserrat"
+            Cursor="Hand"
+            Margin="659,68,-47,-53" Click="Inapoibtn_Click" Grid.Row="1">
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="CornflowerBlue"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="CadetBlue"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Height="30"
+                        CornerRadius="15"
+                        Background="{TemplateBinding Background}" Margin="31,58,64,51">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+
+        </Button>
+        <Button x:Name="Selecteazabtn"
+
+BorderThickness="0"
+Content="Selecteaza"
+Foreground="DarkBlue"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Margin="541,68,71,-53" Click="Selecteazabtn_Click" Grid.Row="1">
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="CornflowerBlue"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="CadetBlue"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Height="30"
+            CornerRadius="15"
+            Background="{TemplateBinding Background}" Margin="31,58,64,51">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>

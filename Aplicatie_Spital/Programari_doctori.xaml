@@ -1,0 +1,178 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAGE_APP"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com" x:Class="LAGE_APP.Programari_doctori"
+        mc:Ignorable="d"
+        Title="Programari_doctori" Height="550" Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Imagini/logo.png"
+        WindowStyle="None">
+    <Border CornerRadius="20" Margin="0,1,0,-1">
+
+        <Border.Background>
+            <ImageBrush ImageSource="/Imagini/prima_pagina.png"/>
+        </Border.Background>
+
+
+        <Grid>
+            <TextBlock TextWrapping="Wrap" Text="PROGRAMARILE MELE: " Margin="44,39,576,476" FontSize="22" FontFamily="Bookman Old Style" FontWeight="SemiBold" Foreground="#FF33B8BD"/>
+            <Grid>
+                <TextBlock    x:Name="PlaceholderTextBlock6"
+                              Text="Vezi pacientii:"
+                              Foreground="#FF19599A"
+                              FontSize="18"
+                              FontFamily="Montserrat"
+                              FontWeight="Medium"
+                              VerticalAlignment="Top"
+                              Margin="10,129,614,0"
+                              Padding="30,0,0,0"
+                              Visibility="Visible"
+                              Height="20"/>
+                <Button x:Name="Inapoibtn"
+        
+                    BorderThickness="0"
+                    Content="Inapoi"
+                    Foreground="DarkBlue"
+                    FontSize="16"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Margin="695,435,-15,-24" Click="Inapoibtn_Click">
+
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="CornflowerBlue"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="CadetBlue"/>
+
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Height="30"
+                                CornerRadius="15"
+                                Background="{TemplateBinding Background}" Margin="31,58,64,51">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+
+                </Button>
+                <Button x:Name="btnClose1"
+       
+                    BorderThickness="0"
+                    Content="X"
+                    Foreground="White"
+                    FontSize="16"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Click="btnClose_Click" Margin="834,18,0,0" RenderTransformOrigin="0.5,0.5" Height="68" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"
+                >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.036"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Red"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DarkRed"/>
+
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="25" Height="25"
+                                CornerRadius="9"
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+
+                </Button>
+                <Button x:Name="btnMinimizare1" Content="-" Foreground="Black" FontSize="16" FontFamily="Montserrat" Cursor="Hand" Margin="794,33,38,477"   RenderTransformOrigin="0.5,0.5" Click="btnMinimizare1_Click" >
+
+                    <Button.Resources>
+                        <Style TargetType="{x:Type ContentPresenter}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Resources>
+
+
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="GhostWhite" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FFE6FDFD" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Border Width="25" Height="25" CornerRadius="9" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                                <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="/Imagini/minimizare.gif" Width="25" Height="25" Visibility="Collapsed" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="gifImage" Property="Visibility" Value="Visible" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+
+                </Button>
+                <Image x:Name="InimaGifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="/Imagini/programariDoctori.gif" Width="Auto" Height="Auto" Visibility="Visible" Margin="-50,350,657,-8"/>
+                <ListBox x:Name="mylistabox" HorizontalAlignment="Left" Height="130" Margin="44,182,0,0" VerticalAlignment="Top" Width="784" d:ItemsSource="{d:SampleData ItemCount=0}"/>
+                <TextBlock    x:Name="PlaceholderTextBlock6_Copy"
+                    Text="Nume Prenume Data Ora:"
+                    Foreground="#FF19599A"
+                    FontSize="18"
+                    FontFamily="Montserrat"
+                    FontWeight="Medium"
+                    VerticalAlignment="Top"
+                    Margin="10,156,614,0"
+                    Padding="30,0,0,0"
+                    Visibility="Visible"
+                    Height="20"/>
+            </Grid>
+
+        </Grid>
+
+
+
+
+
+    </Border>
+</Window>

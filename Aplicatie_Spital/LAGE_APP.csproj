@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A0B21F9-5949-47D6-834F-37217F3823FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LAGE_APP</RootNamespace>
+    <AssemblyName>LAGE_APP</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=24.1460.41.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Licensing.24.1.41\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfMaps.WPF, Version=24.1460.41.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.SfMaps.WPF.24.1.41\lib\net46\Syncfusion.SfMaps.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF, Version=24.1460.41.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Shared.WPF.24.1.41\lib\net46\Syncfusion.Shared.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Analize.xaml.cs">
+      <DependentUpon>Analize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnalizeDoctori.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AnalizePacienti.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Asistenti.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.xaml.cs">
+      <DependentUpon>Contact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DespreDoctori.xaml.cs">
+      <DependentUpon>DespreDoctori.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DespreNOI.xaml.cs">
+      <DependentUpon>DespreNOI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Doctori.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facturi_Pacienti.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="home_doctor.xaml.cs">
+      <DependentUpon>home_doctor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="home_pacient.xaml.cs">
+      <DependentUpon>home_pacient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IncarcareAnalize.xaml.cs">
+      <DependentUpon>IncarcareAnalize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Infirmieri.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Internari.xaml.cs">
+      <DependentUpon>Internari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Medici.xaml.cs">
+      <DependentUpon>Medici.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PachetCardiologie.xaml.cs">
+      <DependentUpon>PachetCardiologie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PachetChirurgie.xaml.cs">
+      <DependentUpon>PachetChirurgie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PachetDermatologie.xaml.cs">
+      <DependentUpon>PachetDermatologie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PachetGastro.xaml.cs">
+      <DependentUpon>PachetGastro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PachetGineco.xaml.cs">
+      <DependentUpon>PachetGineco.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PachetMedicinaInterna.xaml.cs">
+      <DependentUpon>PachetMedicinaInterna.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PachetNeurologie.xaml.cs">
+      <DependentUpon>PachetNeurologie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PachetOrtopedie.xaml.cs">
+      <DependentUpon>PachetOrtopedie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PachetPediatrie.xaml.cs">
+      <DependentUpon>PachetPediatrie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pacienti.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pacienti_internati.xaml.cs">
+      <DependentUpon>Pacienti_internati.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programare_analize.xaml.cs">
+      <DependentUpon>Programare_analize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programari_doctori.xaml.cs">
+      <DependentUpon>Programari_doctori.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Programari_Pacienti.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Programari_pacienti.xaml.cs">
+      <DependentUpon>Programari_pacienti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Promotii.xaml.cs">
+      <DependentUpon>Promotii.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Saloane.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specializari.xaml.cs">
+      <DependentUpon>Specializari.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpitalE.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpitalE.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpitalE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpitalE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpitalE.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>SpitalE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="teatre_operatii.xaml.cs">
+      <DependentUpon>teatre_operatii.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Analize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Contact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Design_Bara_home_pacient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DespreDoctori.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DespreNOI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="home_doctor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="home_pacient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IncarcareAnalize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inregistrare_doctor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inregistrare_pacient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Internari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Inregistrare_doctor.xaml.cs">
+      <DependentUpon>Inregistrare_doctor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inregistrare_pacient.xaml.cs">
+      <DependentUpon>Inregistrare_pacient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Medici.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PachetCardiologie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PachetChirurgie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PachetDermatologie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PachetGastro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PachetGineco.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PachetMedicinaInterna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PachetNeurologie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PachetOrtopedie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PachetPediatrie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pacienti_internati.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Prima_pagina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Programare_analize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Programari_doctori.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Programari_pacienti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Promotii.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Specializari.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="teatre_operatii.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Prima_pagina.xaml.cs">
+      <DependentUpon>Prima_pagina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="SpitalE.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SpitalE.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SpitalE.edmx.diagram">
+      <DependentUpon>SpitalE.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagini\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagini\fundal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagini\inchidere.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagini\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagini\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagini\minimizare.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagini\x.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagini\parola.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SpitalE.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SpitalE.Context.cs</LastGenOutput>
+      <DependentUpon>SpitalE.edmx</DependentUpon>
+    </Content>
+    <Content Include="SpitalE.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpitalE.edmx</DependentUpon>
+      <LastGenOutput>SpitalE.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Imagini\pacient.gif" />
+    <Resource Include="Imagini\fundal.jpg" />
+    <Resource Include="Imagini\doctor.gif" />
+    <Resource Include="Imagini\doctor_grayed.gif" />
+    <Resource Include="Imagini\pacient_grayed.gif" />
+    <Resource Include="Imagini\inregistrare_pacient.png" />
+    <Resource Include="Imagini\inima.png" />
+    <Resource Include="Imagini\inima.gif" />
+    <Resource Include="Imagini\inima_buuna.gif" />
+    <Resource Include="Imagini\pacientfundal.png" />
+    <Resource Include="Imagini\pacientGIF.gif" />
+    <Resource Include="Imagini\Promotii.png" />
+    <Resource Include="Imagini\cardiogif.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imagini\dermatogif.gif" />
+    <Resource Include="Imagini\gastrogif.gif" />
+    <Resource Include="Imagini\ginecogif.gif" />
+    <Resource Include="Imagini\chirurgiegif.gif" />
+    <Resource Include="Imagini\neurogif.gif" />
+    <Resource Include="Imagini\orlgif.gif" />
+    <Resource Include="Imagini\pediatriegif.gif" />
+    <Resource Include="Imagini\ortogif.gif" />
+    <Resource Include="Imagini\prima_pagina.png" />
+    <Resource Include="Imagini\programari.png" />
+    <Resource Include="Imagini\prog.jpg" />
+    <Resource Include="Imagini\me.png" />
+    <Resource Include="Imagini\paccc.jpg" />
+    <Resource Include="Imagini\internati.png" />
+    <Resource Include="Imagini\internari.png" />
+    <Resource Include="Imagini\analize.png" />
+    <Resource Include="Imagini\programaripng.png" />
+    <Resource Include="Imagini\analizepng.png" />
+    <Resource Include="Imagini\promotiipng.png" />
+    <Resource Include="Imagini\contact.png" />
+    <Resource Include="Imagini\despre_clinica.png" />
+    <Resource Include="Imagini\medici.png" />
+    <Resource Include="Imagini\programari_analize.png" />
+    <Resource Include="Imagini\specializari.png" />
+    <Resource Include="Imagini\robotgif.gif" />
+    <Resource Include="Imagini\robot1.png" />
+    <Resource Include="Imagini\robot2.png" />
+    <Resource Include="Imagini\robot3.png" />
+    <Resource Include="Imagini\robot4.png" />
+    <Resource Include="Imagini\telefon.png" />
+    <Resource Include="Imagini\program.png" />
+    <Resource Include="Imagini\email.png" />
+    <Resource Include="Imagini\adresa.png" />
+    <Resource Include="Imagini\robo.gif" />
+    <Resource Include="Imagini\moneyy.gif" />
+    <Resource Include="Imagini\afectiunigif.gif" />
+    <Resource Include="Imagini\intrebarigif.gif" />
+    <Resource Include="Imagini\intreabagif.gif" />
+    <Resource Include="Imagini\schimbaregif.gif" />
+    <Resource Include="Imagini\roboo.png" />
+    <Resource Include="Imagini\fundal_specializari.jpg" />
+    <Resource Include="Imagini\inimarobot.png" />
+    <Resource Include="Imagini\pediatrierobot.png" />
+    <Resource Include="Imagini\ortopedierobot.png" />
+    <Resource Include="Imagini\ginecorobot.png" />
+    <Resource Include="Imagini\neurorobot.png" />
+    <Resource Include="Imagini\chirurgrobot.png" />
+    <Resource Include="Imagini\dermatorobot.png" />
+    <Resource Include="Imagini\gastrorobot.png" />
+    <Resource Include="Imagini\militarrobot.png" />
+    <Resource Include="Imagini\operatii.jpg" />
+    <Resource Include="Imagini\fundaloperatii.png" />
+    <Resource Include="Imagini\fundaloperatii.jpg" />
+    <Resource Include="Imagini\desprenoi.jpg" />
+    <Resource Include="Imagini\despre_noi.gif" />
+    <Resource Include="Imagini\fundal_programari_pacienti.jpg" />
+    <Resource Include="Imagini\mergee.jpg" />
+    <Resource Include="Imagini\fundal_programare_analize.jpg" />
+    <Resource Include="Imagini\programarigif.gif" />
+    <Resource Include="Imagini\icondoctor.png" />
+    <Resource Include="Imagini\programariDoctori.gif" />
+    <Resource Include="Imagini\pacientiinternati.jpg" />
+    <Resource Include="Imagini\pacientiinternati.gif" />
+    <Resource Include="Imagini\internari.jpg" />
+    <Resource Include="Imagini\exclamare.gif" />
+    <Resource Include="Imagini\internari.gif" />
+    <Resource Include="Imagini\incarcarianalize.jpg" />
+    <Resource Include="Imagini\internaripac.gif" />
+    <Content Include="Imagini\user.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="ochi_inchis.png" />
+    <Resource Include="ochi_deschis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

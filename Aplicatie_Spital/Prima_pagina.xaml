@@ -1,0 +1,230 @@
+﻿<Window x:Class="LAGE_APP.Prima_pagina"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:LAGE_APP"
+        mc:Ignorable="d"
+        Title="Prima_pagina" 
+        Height="450" 
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Imagini/logo.png"
+        WindowStyle="None">
+
+    <Border CornerRadius="20" Margin="0,1,0,-1">
+
+        <Border.Background>
+            <ImageBrush ImageSource="/Imagini/fundal.jpg">
+            </ImageBrush>
+        </Border.Background>
+        <Grid Margin="588,8,28,388" Cursor="">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+
+
+
+
+
+            <Button x:Name="btnMinimizare1" Content="-" Foreground="Black" FontSize="16" FontFamily="Montserrat" Cursor="Hand" Margin="102,10,5,-5"   RenderTransformOrigin="0.5,0.5" Grid.Row="1" Click="btnMinimizare1_Click" >
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type ContentPresenter}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="GhostWhite" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border Width="25" Height="25" CornerRadius="9" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                            <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/minimizare.gif" Width="25" Height="25" Visibility="Collapsed" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="gifImage" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+
+            <Button x:Name="btnClose1"
+       
+                    BorderThickness="0"
+                    Content="X"
+                    Foreground="White"
+                    FontSize="16"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Click="btnClose_Click" Margin="145,0,-28,0" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Height="68" VerticalAlignment="Top"
+                    >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.036"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Red"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkRed"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="25" Height="25"
+                    CornerRadius="9"
+                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+
+            <Canvas HorizontalAlignment="Left" Grid.RowSpan="2" VerticalAlignment="Top"/>
+            <Grid HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top">
+                <Canvas HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </Grid>
+            <ToggleButton x:Name="DoctorBtn"  Content="" HorizontalAlignment="Left" Height="234" Margin="-478,98,0,-278.4" Grid.RowSpan="2" VerticalAlignment="Top" Width="176" Cursor="Hand" Checked="DoctorBtn_Checked" Unchecked="DoctorBtn_Unchecked">
+                <ToggleButton.Template>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Grid>
+                            <Image x:Name="doctorGifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/doctor.gif" Width="Auto" Height="Auto" Visibility="Visible" Margin="0,0,0,24.4"/>
+                            <Image x:Name="doctorGifImageGray" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/doctor_grayed.gif" Width="Auto" Height="Auto" Visibility="Collapsed" Margin="0,0,0,24.4"/>
+                        </Grid>
+                    </ControlTemplate>
+                </ToggleButton.Template>
+            </ToggleButton>
+
+            <ToggleButton x:Name="PacientBtn"  Content="" HorizontalAlignment="Left" Height="250" Margin="-132,84,0,-280.4" Grid.RowSpan="2" VerticalAlignment="Top" Width="250" Cursor="Hand" Checked="PacientBtn_Checked" Unchecked="PacientBtn_Unchecked">
+                <ToggleButton.Template>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Grid>
+                            <Image x:Name="pacientGifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/pacient.gif" Width="auto" Height="auto"/>
+                            <Image x:Name="pacientGifImageGray" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/pacient_grayed.gif" Width="Auto" Height="Auto" Visibility="Collapsed"/>
+                        </Grid>
+                    </ControlTemplate>
+                </ToggleButton.Template>
+            </ToggleButton>
+            <Button x:Name="btnContinua"
+        BorderThickness="0"
+        Content="Continua"
+        Foreground="DarkBlue"
+        FontSize="16"
+        FontFamily="Montserrat"
+        Cursor="Hand"
+        Click="btnContinua_Click"
+        Margin="-311,372,244,-358.4"
+        Grid.RowSpan="2">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="AliceBlue"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="15">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="#FF82A4E8"
+                                                            Duration="0:0:0.2"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.EnterActions>
+                                            <Trigger.ExitActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="AliceBlue"
+                                                            Duration="0:0:0.2"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.ExitActions>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <TextBlock
+                Text="TIPUL CONTULUI"
+                Foreground="White"
+                FontSize="20"
+                FontWeight="Medium"
+                FontFamily="Montserrat"
+                Margin="-281,34,271,-11.4" Grid.RowSpan="2"/>
+            <TextBlock
+                Text="Doctor"
+                Foreground="White"
+                FontSize="20"
+                FontWeight="Medium"
+                FontFamily="Montserrat"
+                Margin="-416,315,510,-292.4" Grid.RowSpan="2"/>
+            <TextBlock
+                Text="Pacient"
+                Foreground="White"
+                FontSize="20"
+                FontWeight="Medium"
+                FontFamily="Montserrat"
+                Margin="-47,311,141,-288.4" Grid.RowSpan="2"/>
+
+
+
+
+        </Grid>
+    </Border>
+</Window>

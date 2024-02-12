@@ -1,0 +1,195 @@
+﻿<Window x:Class="LAGE_APP.home_doctor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAGE_APP"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="home_doctor" Height="650" Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Imagini/logo.png"
+        WindowStyle="None">
+    <Border CornerRadius="20" Margin="0,1,0,-1">
+
+        <Border.Background>
+            <ImageBrush ImageSource="/Imagini/prima_pagina.png">
+            </ImageBrush>
+        </Border.Background>
+        <Grid Margin="10,39,30,10" Cursor="">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+
+
+
+            <Button x:Name="btnMinimizare1" Content="-" Foreground="Black" FontSize="16" FontFamily="Montserrat" Cursor="Hand" Margin="755,2,37,559"   RenderTransformOrigin="0.5,0.5" Grid.Row="1" Click="btnMinimizare1_Click" >
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type ContentPresenter}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="GhostWhite" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FFE6FDFD" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border Width="25" Height="25" CornerRadius="9" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                            <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/minimizare.gif" Width="25" Height="25" Visibility="Collapsed" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="gifImage" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+
+            <Button x:Name="btnClose1"
+       
+                BorderThickness="0"
+                Content="X"
+                Foreground="White"
+                FontSize="16"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Click="btnClose_Click" Margin="792,-11,0,0" RenderTransformOrigin="0.5,0.5" Grid.Row="1" Height="68" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"
+                >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.036"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Red"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkRed"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="25" Height="25"
+CornerRadius="9"
+Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+
+
+            <Grid x:Name="gMenu" MouseDown="gMenu_MouseDown" Margin="385,85,0,56" Grid.RowSpan="2">
+                <Grid.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="White" Offset="0.9"/>
+                        <GradientStop Offset="1"/>
+                        <GradientStop x:Name="ColorCirkle" Color="#7F434343" Offset="0.91"/>
+                    </RadialGradientBrush>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="programari" Grid.ColumnSpan="2" Margin="67,24,67,110"  Foreground="{x:Null}" BorderBrush="#FFDEDF10" Background="#FF716E6E" Click="programari_Click" Grid.Column="1" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.RowSpan="2" Cursor="Hand">
+                    <Button.OpacityMask>
+                        <ImageBrush ImageSource="Imagini/inima.png" Stretch="UniformToFill"/>
+                    </Button.OpacityMask>
+                </Button>
+                <Grid x:Name="gExit" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Column="1" Margin="10" Grid.Row="1">
+                    <Grid.Background>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFE7E7E7" Offset="0.854"/>
+                            <GradientStop Offset="1"/>
+                            <GradientStop Color="#7FBCBCBC" Offset="0.856"/>
+                        </RadialGradientBrush>
+                    </Grid.Background>
+                    <Button x:Name="btnExit" Margin="47,40,46,40"  Foreground="{x:Null}" BorderBrush="#FFCB2323" Background="#FF716E6E" Click="btnExit_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave">
+                        <Button.OpacityMask>
+                            <ImageBrush ImageSource="Imagini/logo.png" Stretch="UniformToFill"/>
+                        </Button.OpacityMask>
+                    </Button>
+                </Grid>
+                <Button x:Name="despre_mine" Margin="86,12,76,92"  Foreground="{x:Null}" BorderBrush="#FF3FCB23" Background="#FF716E6E" Click="despre_mine_Click" Grid.Column="2" Grid.ColumnSpan="2" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.RowSpan="2" Grid.Row="1" Cursor="Hand">
+                    <Button.OpacityMask>
+                        <ImageBrush ImageSource="Imagini/me.png" Stretch="UniformToFill"/>
+                    </Button.OpacityMask>
+                </Button>
+                <Button x:Name="pacienti_internati" Margin="25,12,106,92"  Foreground="{x:Null}" BorderBrush="#FF23CBB6" Background="#FF716E6E" Click="pacienti_internati_Click" Grid.Row="1" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Grid.ColumnSpan="2" Grid.RowSpan="2" Cursor="Hand">
+                    <Button.OpacityMask>
+                        <ImageBrush ImageSource="Imagini/internati.png" Stretch="Fill" TileMode="FlipXY"/>
+                    </Button.OpacityMask>
+                </Button>
+                <Button x:Name="incarcare_analize" Margin="60,50,80,78"  Foreground="{x:Null}" BorderBrush="#FF50485F" Background="#FF716E6E" Click="incarcare_analize_Click" Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" RenderTransformOrigin="0.475,0.633" Grid.ColumnSpan="2" Cursor="Hand">
+                    <Button.OpacityMask>
+                        <ImageBrush ImageSource="Imagini/analize.png" Stretch="UniformToFill"/>
+                    </Button.OpacityMask>
+                </Button>
+                <Button x:Name="interneaza" Margin="84,58,60,70" Foreground="{x:Null}" BorderBrush="#FF8223CB" Background="#FF716E6E" Click="internari_Click" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" RenderTransformOrigin="0.352,0.559" Cursor="Hand">
+                    <Button.OpacityMask>
+                        <ImageBrush ImageSource="Imagini/internari.png" Stretch="UniformToFill"/>
+                    </Button.OpacityMask>
+                </Button>
+                <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="23,39,0,0" Grid.Row="1" TextWrapping="Wrap" Text="DESPRE DOCTORI" VerticalAlignment="Top" Height="40" Width="66" FontSize="15" Foreground="#FF2D8FAB" FontWeight="SemiBold"/>
+
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="20,8,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="𝒮𝒫𝐼𝒯𝒜𝐿𝒰𝐿 𝒞𝐿𝐼𝒩𝐼𝒞 𝑀𝐼𝐿𝐼𝒯𝒜𝑅 𝒟𝐸 𝒰𝑅𝒢𝐸𝒩𝒯𝒜   ❝𝐿𝒜𝒢𝐸❞ " VerticalAlignment="Top" Height="50" Width="635" FontSize="22"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,151,0,0" Grid.RowSpan="2" FontSize="16" Width="365" Text="&#x9;Bine ai venit in aplicatia dedicata special pentru tine. Aici, vei gasi toate instrumentele necesare pentru a oferi cea mai buna ingrijire pacientilor tai. Te rugam sa explorezi meniul din dreapta pentru a accesa diferite functionalitati si optiuni personalizate." TextAlignment="Justify" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Papyrus" FontStyle="Italic" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Margin="20,321,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="&#x9;Ne dorim ca aceasta platforma sa iti ofere o experienta eficienta si placuta in gestionarea activitatilor tale medicale. Multumim pentru dedicarea ta in ingrijirea pacientilor!" VerticalAlignment="Top" FontSize="16" Height="110" Width="345" FontFamily="Papyrus" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock HorizontalAlignment="Left" Margin="178,460,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" FontFamily="Papyrus"><Run Text="Cu stima,"/><LineBreak/><Run Text=" "/><LineBreak/><Run Text="ECHIPA"/></TextBlock>
+            <Image Source="/Imagini/logo.png" Margin="244,476,553,85" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+            </Image>
+            <TextBlock HorizontalAlignment="Left" Margin="574,175,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="PROGRAMARI" VerticalAlignment="Top" Width="98" FontSize="15" Foreground="#FF2D8FAB" Focusable="True" FontWeight="SemiBold"/>
+            <TextBlock HorizontalAlignment="Left" Margin="460,291,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF2D8FAB" FontWeight="Bold" Height="45" Width="80"><Run Text=" PACIENTI INTERNATI"/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="500,465,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="INTERNARI" VerticalAlignment="Top" Foreground="#FF2D8FAB" FontSize="14" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Margin="673,452,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF2D8FAB" FontSize="13" FontWeight="Bold"><Run Text="INCARCARE "/><LineBreak/><Run Text="   ANALIZE"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,152 @@
+﻿<Window x:Class="LAGE_APP.DespreNOI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAGE_APP"
+        mc:Ignorable="d"
+        Title="DespreNOI" Height="650" Width="900"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com" 
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Imagini/logo.png"
+        WindowStyle="None">
+    <Border CornerRadius="30" Margin="0,1,0,-1">
+        <Border.Background>
+            <ImageBrush ImageSource="/Imagini/desprenoi.jpg" Stretch="Fill" />
+        </Border.Background>
+
+        <Grid Margin="-30,0,35,10">
+            <Button x:Name="btnClose1"
+       
+            BorderThickness="0"
+            Content="X"
+            Foreground="White"
+            FontSize="16"
+            FontFamily="Montserrat"
+            Cursor="Hand"
+            Click="btnClose_Click" RenderTransformOrigin="1.679,0.147" Height="42" VerticalAlignment="Top" HorizontalAlignment="Left" Width="28" Margin="860,0,0,0"
+>
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.036"/>
+                        <TranslateTransform X="-0.014" Y="-0.02"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Red"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkRed"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="25" Height="25"
+                        CornerRadius="9"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+            <Button x:Name="btnMinimizare1" Content="-" Foreground="Black" FontSize="16" FontFamily="Montserrat" Cursor="Hand" Margin="815,-6,29,590"   RenderTransformOrigin="0.263,0.625" Click="btnMinimizare1_Click" >
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type ContentPresenter}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#FF7EC6DA" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border Width="25" Height="25" CornerRadius="9" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                            <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="/Imagini/minimizare.gif" Width="25" Height="25" Visibility="Collapsed" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="gifImage" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+            <TextBlock HorizontalAlignment="Left" Margin="108,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="140" Width="622" FontSize="16" FontFamily="Comic Sans MS" Foreground="#FF081236"><Run Text="&#x9;Spitalul Militar &quot;LAGE&quot; redefinește standardele în gestionarea spitalului militar, aducând o eficiență sporită și îmbunătățind semnificativ îngrijirea militarilor noștri eroi. Cu acest sistem integrat, aducem tehnologia la linia frontului pentru a salva vieți și a asigura recuperarea rapidă și completă a celor care și-au sacrificat sănătatea pentru apărarea națiunii noastre. "/><LineBreak/><Run Text="&#x9;&quot;LAGE&quot; - Grijă, Eficiență, Excelență."/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="180,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="117" Width="575" FontSize="15" Foreground="#FF1F959E" FontWeight="Bold"><Run Text="1. Misiune și Scop:"/><LineBreak/><Run/><LineBreak/><Run Text="&#x9;&quot;LAGE&quot; este o aplicație dedicată exclusiv pentru spitalul militar, creată pentru a asigura o gestionare transparentă și eficientă a pacienților, resurselor și operațiunilor medicale în timpul și după acțiunile militare."/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="302,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="148" Width="234" Foreground="#FF0E7279" FontSize="15" FontWeight="Bold"><Run Text="2. Caracteristici Cheie:"/><LineBreak/><Run Text="&#x9;"/><LineBreak/><Run Text="a. Gestionarea Pacienților;"/><LineBreak/><Run Text="b. Planificare și Programare;"/><LineBreak/><Run Text="c. Monitorizare a Resurselor;"/><LineBreak/><Run Text="d. Comunicare Securizată;"/><LineBreak/><Run Text="e. Evaluare Medico-Militară."/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="536,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="156" Width="241" FontSize="15" Foreground="#FF326367" FontWeight="Bold"><Run Text="3. Avantaje Competitive:"/><LineBreak/><Run/><LineBreak/><Run Text="a. Mobilitate și Accesibilitate;"/><LineBreak/><Run Text="b. Securitate Ridicată;"/><LineBreak/><Run Text="c. Eficiență Operațională."/></TextBlock>
+            <Grid>
+                <Image x:Name="InimaGifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/despre_noi.gif" Width="Auto" Height="Auto" Visibility="Visible" Margin="448,458,-18,-48"/>
+                <Button x:Name="Inapoibtn"
+        
+                    BorderThickness="0"
+                    Content="Inapoi"
+                    Foreground="DarkBlue"
+                    FontSize="16"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Margin="244,541,431,-40" Click="Inapoibtn_Click">
+
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="CornflowerBlue"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="CadetBlue"/>
+
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Height="30"
+                                CornerRadius="15"
+                                Background="{TemplateBinding Background}" Margin="31,58,64,51">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+
+                </Button>
+            </Grid>
+        </Grid>
+
+    </Border>
+
+</Window>

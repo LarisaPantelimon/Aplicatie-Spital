@@ -1,0 +1,403 @@
+﻿<Window x:Class="LAGE_APP.Contact"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAGE_APP"
+        xmlns:sync="http://schemas.syncfusion.com/wpf"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="Contact" Height="740" Width="1220"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Imagini/logo.png"
+        WindowStyle="None">
+    <Grid>
+
+
+        <Border Background="#FF93E8E8"
+          CornerRadius="25" >
+
+        </Border>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140" />
+                <RowDefinition Height="360" />
+                <RowDefinition Height="170" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+
+            <!-- tabloul 1 -->
+
+            <Border Grid.Row="1"
+              Grid.Column="1"
+              CornerRadius="20"
+              Margin="20,2,20,38">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                   EndPoint="0,1">
+
+                        <GradientStop Color="#FF1BC0BA"
+                                Offset="0.1" />
+
+                        <GradientStop Color="#FF28816A"
+                                Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                      Height="119"
+                      Width="180"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      CornerRadius="20"
+                      Opacity="0.3"
+                      Margin="10,10,0,0" />
+
+                    <TextBlock
+                         Foreground="#FF140DA0"
+                         FontFamily="Bradley Hand ITC"
+                         FontSize="28"
+                         VerticalAlignment="Top"
+                         HorizontalAlignment="Center"
+                         Margin="0,20,0,0" Height="49" Width="180" FontWeight="SemiBold" Text="TELEFON" />
+                    <Grid/>
+
+                    <Grid>
+                        <Image Source="/Imagini/telefon.png" Margin="120,53,61,195"/>
+                    </Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="30,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="122" Width="209" FontFamily="Bradley Hand ITC" FontSize="25" Foreground="#FF6A1027" FontWeight="UltraBold" FontStyle="Oblique" FontStretch="Medium" Focusable="True"><Run Text="0753 622 745"/><LineBreak/><Run/><LineBreak/><Run Text="0770 126 956"/></TextBlock>
+
+                </Grid>
+
+            </Border>
+
+            <!-- tabloul 2 -->
+
+            <Border Grid.Row="1"
+              Grid.Column="2"
+              CornerRadius="20"
+              Margin="20,2,20,38">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                   EndPoint="0,1">
+
+                        <GradientStop Color="#FF35D4AC"
+                                Offset="0.1" />
+
+                        <GradientStop Color="#FF1B655D"
+                                Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                      Height="119"
+                      Width="180"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      CornerRadius="20"
+                      Opacity="0.3"
+                      Margin="10,10,0,0" />
+
+                    <TextBlock
+                         Foreground="#FF140DA0"
+                         FontFamily="Bradley Hand ITC"
+                         FontSize="28"
+                         VerticalAlignment="Top"
+                         HorizontalAlignment="Left"
+                         Margin="30,20,0,0" Height="109" Width="160" FontWeight="SemiBold" InputScope="Default" Text="ADRESA" />
+
+                    <Grid/>
+                    <Grid>
+                        <Image Source="/Imagini/adresa.png" Margin="120,49,61,199"/>
+                    </Grid>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="181" RenderTransformOrigin="0.5,0.5" Width="220" FontSize="25" FontFamily="Bradley Hand ITC" Foreground="#FF6A1027" FontStyle="Oblique" FontWeight="ExtraBold"><Run Text="Bulevardul George Cosbuc nr. 39-49, Sector 5, BUCURESTI,"/><LineBreak/><Run Text="Cod postal: 050141"/></TextBlock>
+                </Grid>
+
+            </Border>
+
+            <!-- tabloul 3 -->
+
+            <Border Grid.Row="1"
+              Grid.Column="3"
+              CornerRadius="20"
+              Margin="20,2,20,38">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                   EndPoint="0,1">
+
+                        <GradientStop Color="#FF35A37B"
+                                Offset="0.1" />
+
+                        <GradientStop Color="#FF134B49"
+                                Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                      Height="114"
+                      Width="180"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      CornerRadius="20"
+                      Opacity="0.3"
+                      Margin="10,10,0,0" />
+
+                    <TextBlock
+                         Foreground="#FF140DA0"
+                         FontFamily="Bradley Hand ITC"
+                         FontSize="28"
+                         VerticalAlignment="Top"
+                         HorizontalAlignment="Left"
+                         Margin="30,20,0,0" FontWeight="SemiBold" ><Run Text="EMAIL"/><LineBreak/><Run/></TextBlock>
+
+                    <Grid/>
+                    <Grid>
+                        <Image Source="/Imagini/email.png" Margin="128,53,51,206"/>
+                    </Grid>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="122" Width="249" FontFamily="Bradley Hand ITC" FontSize="20" Foreground="#FF6A1027" FontWeight="UltraBold" FontStyle="Oblique" FontStretch="Medium" Focusable="True"><Run Text="info_lage@gmail.com"/><LineBreak/><Run/><LineBreak/><Run Text="lage_contact@gmail.com"/></TextBlock>
+
+                </Grid>
+
+            </Border>
+
+            <!-- tabloul 4 -->
+
+            <Border Grid.Row="1"
+              Grid.Column="4"
+              CornerRadius="20"
+              Margin="20,4,20,36">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                   EndPoint="0,1">
+
+                        <GradientStop Color="#FF139071"
+                                Offset="0.1" />
+
+                        <GradientStop Color="#FF32755F"
+                                Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                      Height="109"
+                      Width="180"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      CornerRadius="20"
+                      Opacity="0.3"
+                      Margin="10,10,0,0" />
+
+                    <TextBlock
+                         Foreground="#FF140DA0"
+                         FontFamily="Bradley Hand ITC"
+                         FontSize="28"
+                         VerticalAlignment="Top"
+                         HorizontalAlignment="Left"
+                         Margin="26,14,0,0" FontWeight="SemiBold" ><Run Text="PROGRAM"/><LineBreak/><Run Text="AUDIENTE"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+                    <Grid/>
+                    <Grid>
+                        <Image Source="/Imagini/program.png" Margin="132,60,49,188"/>
+                    </Grid>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="122" Width="249" FontFamily="Bradley Hand ITC" FontSize="23" Foreground="#FF6A1027" FontWeight="UltraBold" FontStyle="Oblique" FontStretch="Medium" Focusable="True"><Run Text=" L-V -&gt; 12:00-15:00"/><LineBreak/><Run/><LineBreak/><Run Text=" J -&gt; 09:00-11:00"/><LineBreak/></TextBlock>
+
+                </Grid>
+
+            </Border>
+
+            <!-- titlu -->
+
+            <TextBlock Grid.Row="0"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="4"
+                 Text="𝒮𝒫𝐼𝒯𝒜𝐿𝒰𝐿  𝒞𝐿𝐼𝒩𝐼𝒞  𝑀𝐼𝐿𝐼𝒯𝒜𝑅  𝒟𝐸  𝒰𝑅𝒢𝐸𝒩𝒯𝒜   ❝𝐿𝒜𝒢𝐸❞ "
+                 Foreground="#FF144A3A"
+                 FontFamily="Oswald"
+                 FontSize="36"
+                 Margin="20,50,158,0" />
+
+            <TextBlock Grid.Row="0"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="2"
+                 Text="I  A    L  E  G  A  T  U  R  A    C  U    N  O  I"
+                 Foreground="#FF144A3A"
+                 FontFamily="Roboto"
+                 FontSize="18"
+                 HorizontalAlignment="Right"
+                 VerticalAlignment="Bottom"
+                 Margin="0,0,140,10" FontWeight="UltraBlack" />
+
+
+            <!-- subsol -->
+
+
+        </Grid>
+        <Button x:Name="btnMinimizare1" Content="-" Foreground="Black" FontSize="16" FontFamily="Montserrat" Cursor="Hand" Margin="1109,4,68,681"   RenderTransformOrigin="0.263,0.625" Click="btnMinimizare1_Click" >
+
+            <Button.Resources>
+                <Style TargetType="{x:Type ContentPresenter}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Resources>
+
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="GhostWhite" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="CadetBlue" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Width="25" Height="25" CornerRadius="9" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/minimizare.gif" Width="25" Height="25" Visibility="Collapsed" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="gifImage" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+
+
+        </Button>
+
+        <Button x:Name="btnClose1"
+       
+        BorderThickness="0"
+        Content="X"
+        Foreground="White"
+        FontSize="16"
+        FontFamily="Montserrat"
+        Cursor="Hand"
+        Click="btnClose_Click" 
+        Margin="1159,12,0,0" 
+        RenderTransformOrigin="0.5,0.5" 
+        Height="40" 
+        VerticalAlignment="Top" 
+        HorizontalAlignment="Left" 
+        Width="28"
+    >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.036"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Red"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkRed"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="25" 
+                    Height="25"
+                    CornerRadius="9"
+                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="75,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="252" Width="1077" FontSize="17" FontFamily="MV Boli"><Run Text="&#x9;Programarea pacientilor în Ambulatoriul integrat – se face:"/><LineBreak/><Run Text="-&gt; pe adresa de e-mail: lage_contact@gmail.com"/><LineBreak/><Run Text="-&gt; telefonic la numarul: 0753 622 745"/><LineBreak/><Run Text="-&gt; programare on-line "/><LineBreak/><Run Text="-&gt; programare la ghiseul dedicat al Ambulatoriului (Biroul programari)"/><LineBreak/><Run Text="&#x9;PROGRAMARILE PACIENTILOR in SECTIILE NOASTRE se vor face la numerele de telefon si/sau adresele de e-mail specificate, publicate mai sus.    &#x9;&#x9;"/><LineBreak/><Run Text="&#x9;&#x9;&#x9;&#x9;NU SE EFECTUEAZA CONSULTURI/TRATAMENTE FARA PROGRAMARE! "/></TextBlock>
+        <Image x:Name="gifImage1" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/doctor.gif" Margin="935,660,158,0" RenderTransformOrigin="0.582,0.833"/>
+        <Button x:Name="Inapoibtn"
+        
+            BorderThickness="0"
+            Content="Inapoi"
+            Foreground="DarkBlue"
+            FontSize="16"
+            FontFamily="Montserrat"
+            Cursor="Hand"
+            Margin="1030,620,0,-35" Click="Inapoibtn_Click" HorizontalAlignment="Left" Width="220">
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="CornflowerBlue"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="CadetBlue"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Height="30"
+                        CornerRadius="15"
+                        Background="{TemplateBinding Background}" Margin="31,58,64,51">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+
+        </Button>
+
+    </Grid>
+
+</Window>

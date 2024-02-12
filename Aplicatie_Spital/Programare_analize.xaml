@@ -1,0 +1,228 @@
+﻿<Window x:Class="LAGE_APP.Programare_analize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAGE_APP"
+        mc:Ignorable="d"
+        Title="Programare_analize" Height="450" Width="800"         
+        xmlns:gif="http://wpfanimatedgif.codeplex.com" 
+         WindowStartupLocation="CenterScreen"
+         ResizeMode="NoResize"
+         MouseDown="Window_MouseDown"
+         Background="Transparent"
+         AllowsTransparency="True"
+         Icon="/Imagini/logo.png"
+         WindowStyle="None">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="CustomGradientBrush" StartPoint="0.75,0" EndPoint="0,1">
+            <GradientStop Color="#FF00C8C8" Offset="0.1" />
+            <GradientStop Color="#FFCEC31C" Offset="0.8" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="GradientBrushScris" StartPoint="0.75,0" EndPoint="0,1">
+            <GradientStop Color="#FF13C3AA" Offset="0.0" />
+            <GradientStop Color="#FF174CAF" Offset="0.8" />
+        </LinearGradientBrush>
+
+        <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Background" Value="{StaticResource CustomGradientBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource GradientBrushScris}"/>
+        </Style>
+    </Window.Resources>
+
+    <Border CornerRadius="20" Margin="0,1,0,-1">
+
+        <Border.Background>
+            <ImageBrush ImageSource="/Imagini/fundal_programare_analize.jpg" Stretch="Fill" />
+        </Border.Background>
+        <Grid Margin="0,44,10,56">
+            <Button x:Name="btnClose1"
+                        BorderThickness="0"
+                        Content="X"
+                        Foreground="White"
+                        FontSize="16"
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        Click="btnClose_Click" 
+                        Margin="758,-34,0,0" 
+                        RenderTransformOrigin="0.5,0.5" 
+                        Height="40" 
+                        VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" 
+                        Width="28"
+>
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.036"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Red"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkRed"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="25" 
+                Height="25"
+                CornerRadius="9"
+                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+            <Button x:Name="btnMinimizare1" Content="-" Foreground="Black" FontSize="16" FontFamily="Montserrat" Cursor="Hand" Margin="710,-37,30,340"   RenderTransformOrigin="0.263,0.625" Click="btnMinimizare1_Click" >
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type ContentPresenter}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="GhostWhite" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Border Width="25" Height="25" CornerRadius="9" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                            <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="/Imagini/minimizare.gif" Width="25" Height="25" Visibility="Collapsed" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="gifImage" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+            <Grid>
+                <StackPanel Margin="320,10,0,-40">
+                    <CheckBox x:Name="chkHemoleucograma" Content="   Hemoleucograma            ->   50.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkEritrocite" Content="   Eritrocite                           ->   30.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkLeucocite" Content="   Leucocite                          ->   40.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkGlicemie" Content="   Glicemie                           ->   25.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkElectroliti" Content="   Electroliti                          ->   35.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkColesterol" Content="   Colesterol                         ->   45.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkHemoglobina" Content="   Hemoglobina                   ->   55.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkUree" Content="   Uree                                  ->   30.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkCreatinina" Content="   Creatinina                         ->   40.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkMagneziemia" Content="   Magneziemia                   ->   20.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkEKG" Content="   EKG                                   ->   60.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkRadiografiePulmonara" Content="   Radiografie Pulmonară   ->   75.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkEcografieAbdominala" Content="   Ecografie Abdominală     ->   100.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <CheckBox x:Name="chkEcocardiografie" Content="   Ecocardiografie                ->   60.0 lei" Checked="UpdateTotal" Unchecked="chkUnchecked" Style="{StaticResource CheckBoxStyle}" Cursor="Hand"/>
+                    <Label x:Name="lblTotal" Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;Preț total: 0.0 lei" Width="402" Height="94" FontFamily="Consolas" Foreground="#FF15637E" FontSize="15" FontWeight="Black"/>
+                </StackPanel>
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="102" Width="290" FontFamily="Bookman Old Style" FontSize="22" FontWeight="UltraBlack" FontStretch="UltraExpanded" Foreground="#FF32349E"><Run Text="PRETURI ANALIZE"/><LineBreak/><Run Text="&#x9; +"/><LineBreak/><Run Text=" CALCULATOR"/></TextBlock >
+            <Grid>
+                <Image x:Name="GifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/programarigif.gif" Width="Auto" Height="Auto" Visibility="Visible" Margin="580,109,-4,10"/>
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="320,-6,0,0" TextWrapping="Wrap" Text="*programarile se fac automat pentru urmatoarea zi lucratoare" VerticalAlignment="Top" Width="405" Foreground="#FF2F29A9" FontWeight="Medium"/>
+            <Button x:Name="Inapoibtn"
+        
+                BorderThickness="0"
+                Content="Inapoi"
+                Foreground="DarkBlue"
+                FontSize="16"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Margin="291,305,279,-94" Click="Inapoibtn_Click">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="CornflowerBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Height="30"
+                            CornerRadius="15"
+                            Background="{TemplateBinding Background}" Margin="31,58,64,51">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+            <Button x:Name="programare_analize"
+        
+                BorderThickness="0"
+                Content="Confirma"
+                Foreground="DarkBlue"
+                FontSize="16"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Margin="618,305,-48,-94" Click="confirma_Click">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="CornflowerBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Height="30"
+                            CornerRadius="15"
+                            Background="{TemplateBinding Background}" Margin="31,58,64,51">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+            </Button>
+        </Grid>
+    </Border>
+</Window>

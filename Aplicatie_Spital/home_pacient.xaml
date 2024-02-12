@@ -1,0 +1,673 @@
+﻿<Window x:Class="LAGE_APP.home_pacient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAGE_APP"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="home_pacient" Height="740" Width="1220"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Imagini/logo.png"
+        WindowStyle="None">
+    <Grid>
+
+        <Border Background="#FF162836"
+                CornerRadius="25" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140" />
+                <RowDefinition Height="360" />
+                <RowDefinition Height="170" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+
+            <!-- tabloul 1 -->
+
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    CornerRadius="20"
+                    Margin="20">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#DF208F"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#DFCF20"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                            Height="200"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3"
+                            Margin="10,10,0,0" />
+
+                    <TextBlock
+                               Foreground="#FFFFFF"
+                               FontFamily="Bradley Hand ITC"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Center"
+                               Margin="0,20,0,0" Height="140" Width="180" FontWeight="SemiBold" ><Run Text="Tehnologie "/><LineBreak/><Run Text="de  inalta "/><LineBreak/><Run Text="performanta"/></TextBlock>
+                    <Grid>
+                        <Image Source="/Imagini/robot1.png" Margin="109,200,-4,-16"/>
+                    </Grid>
+                </Grid>
+
+            </Border>
+
+            <!-- tabloul 2 -->
+
+            <Border Grid.Row="1"
+                    Grid.Column="2"
+                    CornerRadius="20"
+                    Margin="20">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#27BDE9"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#ABDB54"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                            Height="200"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3"
+                            Margin="10,10,0,0" />
+
+                    <TextBlock
+                               Foreground="#FFFFFF"
+                               FontFamily="Bradley Hand ITC"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Left"
+                               Margin="30,20,0,0" Height="140" Width="210" FontWeight="SemiBold" InputScope="Default" ><Run Text="Peste  21  de"/><LineBreak/><Run Text="ani  de  "/><LineBreak/><Run Text="experienta"/></TextBlock>
+
+                    <Grid>
+                        <Image Source="/Imagini/robot2.png" Margin="120,184,-15,0"/>
+                    </Grid>
+                </Grid>
+
+            </Border>
+
+            <!-- tabloul 3 -->
+
+            <Border Grid.Row="1"
+                    Grid.Column="3"
+                    CornerRadius="20"
+                    Margin="20">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#F96100"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#E70B75"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                            Height="200"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3"
+                            Margin="10,10,0,0" />
+
+                    <TextBlock
+                               Foreground="#FFFFFF"
+                               FontFamily="Bradley Hand ITC"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Left"
+                               Margin="30,20,0,0" FontWeight="SemiBold" ><Run Text="Servicii "/><LineBreak/><Run Text="medicale  de "/><LineBreak/><Run Text="inalta "/><LineBreak/><Run Text="calitate"/></TextBlock>
+
+                    <Grid>
+                        <Image Source="/Imagini/robot3.png" Margin="120,181,-31,-12"/>
+                    </Grid>
+                </Grid>
+
+            </Border>
+
+            <!-- tabloul 4 -->
+
+            <Border Grid.Row="1"
+                    Grid.Column="4"
+                    CornerRadius="20"
+                    Margin="20">
+
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#06A4FB"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#B84EEB"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+                <Grid>
+
+                    <Border Background="#FFFFFF"
+                            Height="200"
+                            Width="180"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            CornerRadius="20"
+                            Opacity="0.3"
+                            Margin="10,10,0,0" />
+
+                    <TextBlock
+                               Foreground="#FFFFFF"
+                               FontFamily="Bradley Hand ITC"
+                               FontSize="28"
+                               VerticalAlignment="Top"
+                               HorizontalAlignment="Left"
+                               Margin="30,20,0,0" FontWeight="SemiBold" ><Run Text="Pachete "/><LineBreak/><Run Text="complete  de "/><LineBreak/><Run Text="analize "/><LineBreak/><Run Text="medicale"/></TextBlock>
+                    <Grid>
+                        <Image Source="/Imagini/robot4.png" Margin="120,189,-15,-5"/>
+                    </Grid>
+                </Grid>
+
+            </Border>
+
+            <!-- titlu -->
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="4"
+                       Text="𝒮𝒫𝐼𝒯𝒜𝐿𝒰𝐿  𝒞𝐿𝐼𝒩𝐼𝒞  𝑀𝐼𝐿𝐼𝒯𝒜𝑅  𝒟𝐸  𝒰𝑅𝒢𝐸𝒩𝒯𝒜   ❝𝐿𝒜𝒢𝐸❞ "
+                       Foreground="#CDD7E0"
+                       FontFamily="Oswald"
+                       FontSize="36"
+                       Margin="20,50,158,0" />
+
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"
+                       Text="M E R E U   A L E G E R E A   D U M N E A V O A S T R A"
+                       Foreground="#A6B8C8"
+                       FontFamily="Roboto"
+                       FontSize="12"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Bottom"
+                       Margin="0,0,195,31" />
+
+            <!-- subsol -->
+
+            <Border Grid.Row="3"
+                    Grid.ColumnSpan="6"
+                    CornerRadius="0,0,20,20">
+                
+                    <Image Source="/Imagini/logo.png" Margin="1165,25,0,10"/>
+                
+                <Border.Background>
+
+                    <LinearGradientBrush StartPoint="0.75,0"
+                                         EndPoint="0,1">
+
+                        <GradientStop Color="#FF20DFD8"
+                                      Offset="0.1" />
+
+                        <GradientStop Color="#FFDF20D3"
+                                      Offset="0.8" />
+
+                    </LinearGradientBrush>
+
+                </Border.Background>
+
+            </Border>
+
+            <!-- MENIU -->
+
+            <Grid Grid.Row="2"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="4">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="740" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="1"
+                        Background="#323345"
+                        CornerRadius="10,10,0,0"
+                        Margin="0,85,25,0">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="40" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1"
+                                x:Name="programari"
+                                Style="{StaticResource DockBtnStyle}" Cursor="Hand" Click="programari_Click">
+
+                            <Button.Background>
+
+                                <ImageBrush ImageSource="Imagini/programaripng.png"
+                                            Stretch="Uniform" />
+
+                            </Button.Background>
+
+                            <Popup Width="90"
+                                   HorizontalOffset="-16"
+                                   PlacementTarget="{Binding ElementName=programari}"
+                                   IsOpen="{Binding ElementName=programari, Path=IsMouseOver, Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+
+                                <Grid>
+
+                                    <Border Style="{StaticResource border}">
+
+                                        <TextBlock Text="Programari"
+                                                   Style="{StaticResource PopupText}" />
+
+                                    </Border>
+
+                                    <Path Style="{StaticResource ArrowPath}" />
+
+                                </Grid>
+
+                            </Popup>
+
+                        </Button>
+
+                        <Button Grid.Column="2"
+                                x:Name="analize"
+                                Style="{StaticResource DockBtnStyle}" Cursor="Hand" Click="analize_Click">
+
+                            <Button.Background>
+
+                                <ImageBrush ImageSource="Imagini/analizepng.png"
+                                            Stretch="Uniform" />
+
+                            </Button.Background>
+
+                            <Popup Width="85"
+                                   HorizontalOffset="-20"
+                                   PlacementTarget="{Binding ElementName=analize}"
+                                   IsOpen="{Binding ElementName=analize, Path=IsMouseOver, Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+
+                                <Grid>
+
+                                    <Border Style="{StaticResource border}">
+
+                                        <TextBlock Text="Analize"
+                                                   Style="{StaticResource PopupText}" />
+
+                                    </Border>
+
+                                    <Path Style="{StaticResource ArrowPath}" />
+
+                                </Grid>
+
+                            </Popup>
+
+                        </Button>
+
+                        <Button Grid.Column="3"
+                                x:Name="programari_analize"
+                                Style="{StaticResource DockBtnStyle}" Cursor="Hand" Click="programari_analize_Click">
+
+                            <Button.Background>
+
+                                <ImageBrush ImageSource="Imagini/programari_analize.png"
+                                            Stretch="Uniform" />
+
+                            </Button.Background>
+
+                            <Popup Width="150"
+                                   HorizontalOffset="-55"
+                                   PlacementTarget="{Binding ElementName=programari_analize}"
+                                   IsOpen="{Binding ElementName=programari_analize, Path=IsMouseOver, Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+
+                                <Grid>
+
+                                    <Border Style="{StaticResource border}">
+
+                                        <TextBlock Text="Programari Analize"
+                                                   Style="{StaticResource PopupText}" />
+
+                                    </Border>
+
+                                    <Path Style="{StaticResource ArrowPath}" />
+
+                                </Grid>
+
+                            </Popup>
+
+                        </Button>
+
+                        <Button Grid.Column="4"
+                                x:Name="medici"
+                                Style="{StaticResource DockBtnStyle}" Cursor="Hand" Click="medici_Click">
+
+                            <Button.Background>
+
+                                <ImageBrush ImageSource="Imagini/medici.png"
+                                            Stretch="Uniform" />
+
+                            </Button.Background>
+
+                            <Popup Width="80"
+                                   HorizontalOffset="-14"
+                                   PlacementTarget="{Binding ElementName=medici}"
+                                   IsOpen="{Binding ElementName=medici, Path=IsMouseOver, Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+
+                                <Grid>
+
+                                    <Border Style="{StaticResource border}">
+
+                                        <TextBlock Text="Medici"
+                                                   Style="{StaticResource PopupText}" />
+
+                                    </Border>
+
+                                    <Path Style="{StaticResource ArrowPath}" />
+
+                                </Grid>
+
+                            </Popup>
+
+                        </Button>
+
+                        <Button Grid.Column="5"
+                                x:Name="despre_spital"
+                                Style="{StaticResource DockBtnStyle}" Cursor="Hand" Click="despre_spital_Click">
+
+                            <Button.Background>
+
+                                <ImageBrush ImageSource="Imagini/despre_clinica.png"
+                                            Stretch="Uniform" />
+
+                            </Button.Background>
+
+                            <Popup Width="95"
+                                   HorizontalOffset="-19"
+                                   PlacementTarget="{Binding ElementName=despre_spital}"
+                                   IsOpen="{Binding ElementName=despre_spital, Path=IsMouseOver, Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+
+                                <Grid>
+
+                                    <Border Style="{StaticResource border}">
+
+                                        <TextBlock Text="Despre NOI"
+                                                   Style="{StaticResource PopupText}" />
+
+                                    </Border>
+
+                                    <Path Style="{StaticResource ArrowPath}" />
+
+                                </Grid>
+
+                            </Popup>
+
+                        </Button>
+
+                        <Button Grid.Column="6"
+                                x:Name="promotii"
+                                Style="{StaticResource DockBtnStyle}" Cursor="Hand" Click="promotii_Click">
+
+                            <Button.Background>
+
+                                <ImageBrush ImageSource="Imagini/promotiipng.png"
+                                            Stretch="Uniform" />
+
+                            </Button.Background>
+
+                            <Popup Width="78"
+                                   HorizontalOffset="-18"
+                                   PlacementTarget="{Binding ElementName=promotii}"
+                                   IsOpen="{Binding ElementName=promotii, Path=IsMouseOver, Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+
+                                <Grid>
+
+                                    <Border Style="{StaticResource border}">
+
+                                        <TextBlock Text="Promotii"
+                                                   Style="{StaticResource PopupText}" />
+
+                                    </Border>
+
+                                    <Path Style="{StaticResource ArrowPath}" />
+
+                                </Grid>
+
+                            </Popup>
+
+                        </Button>
+
+                        <Button Grid.Column="7"
+                                x:Name="specializari"
+                                Style="{StaticResource DockBtnStyle}" Cursor="Hand" Click="specializari_Click">
+
+                            <Button.Background>
+
+                                <ImageBrush ImageSource="Imagini/specializari.png"
+                                            Stretch="Uniform" />
+
+                            </Button.Background>
+
+                            <Popup Width="92"
+                                   HorizontalOffset="-15"
+                                   PlacementTarget="{Binding ElementName=specializari}"
+                                   IsOpen="{Binding ElementName=specializari, Path=IsMouseOver, Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+
+                                <Grid>
+
+                                    <Border Style="{StaticResource border}">
+
+                                        <TextBlock Text="Specializari"
+                                                   Style="{StaticResource PopupText}" />
+
+                                    </Border>
+
+                                    <Path Style="{StaticResource ArrowPath}" />
+
+                                </Grid>
+
+                            </Popup>
+
+                        </Button>
+
+                        <Button Grid.Column="8"
+                                x:Name="contact"
+                                Style="{StaticResource DockBtnStyle}" Cursor="Hand" Click="contact_Click">
+
+                            <Button.Background>
+
+                                <ImageBrush ImageSource="Imagini/contact.png"
+                                            Stretch="Uniform" />
+
+                            </Button.Background>
+
+                            <Popup Width="88"
+                                   HorizontalOffset="-27"
+                                   PlacementTarget="{Binding ElementName=contact}"
+                                   IsOpen="{Binding ElementName=contact, Path=IsMouseOver, Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+
+                                <Grid>
+
+                                    <Border Style="{StaticResource border}">
+
+                                        <TextBlock Text="Contact"
+                                                   Style="{StaticResource PopupText}" />
+
+                                    </Border>
+
+                                    <Path Style="{StaticResource ArrowPath}" />
+
+                                </Grid>
+
+                            </Popup>
+
+                        </Button>
+
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+        <Button x:Name="btnMinimizare1" Content="-" Foreground="Black" FontSize="16" FontFamily="Montserrat" Cursor="Hand" Margin="1097,0,80,685"   RenderTransformOrigin="0.263,0.625" Click="btnMinimizare1_Click" >
+
+            <Button.Resources>
+                <Style TargetType="{x:Type ContentPresenter}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Resources>
+
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="GhostWhite" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="CadetBlue" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border Width="25" Height="25" CornerRadius="9" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <Image x:Name="gifImage" gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="Imagini/minimizare.gif" Width="25" Height="25" Visibility="Collapsed" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="gifImage" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+
+
+        </Button>
+
+        <Button x:Name="btnClose1"
+       
+                BorderThickness="0"
+                Content="X"
+                Foreground="White"
+                FontSize="16"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Click="btnClose_Click" 
+                Margin="1151,8,0,0" 
+                RenderTransformOrigin="0.5,0.5" 
+                Height="40" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                Width="28"
+            >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.036"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Red"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkRed"/>
+
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="25" 
+                            Height="25"
+                            CornerRadius="9"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>
